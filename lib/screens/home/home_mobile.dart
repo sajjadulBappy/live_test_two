@@ -34,7 +34,9 @@ class HomeMobile extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.symmetric(
+              horizontal: 2.5 * SizeConfig.textMultiplier,
+          ),
           children: [
             DrawerHeader(
               decoration: const BoxDecoration(
