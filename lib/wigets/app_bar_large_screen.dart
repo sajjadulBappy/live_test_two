@@ -19,7 +19,7 @@ class AppBarLargeScreen extends StatelessWidget {
           TextButton(
             onPressed: () {},
             child: Text(
-              "MD SAJJADUL\nISLAM",
+              "FLUTTER\nDART",
               style: TextStyle(
                 fontSize: 2.8 * SizeConfig.textMultiplier,
                 fontWeight: FontWeight.w600,
@@ -31,7 +31,7 @@ class AppBarLargeScreen extends StatelessWidget {
           TextButton(
             onPressed: () {},
             child: Text(
-              "ISLAM",
+              "Home",
               style: TextStyle(
                 fontSize: 2.5 * SizeConfig.textMultiplier,
                 fontWeight: FontWeight.w500,
@@ -42,7 +42,7 @@ class AppBarLargeScreen extends StatelessWidget {
           TextButton(
             onPressed: () {},
             child: Text(
-              "MD SAJJADUL",
+              "About",
               style: TextStyle(
                 fontSize: 2.5 * SizeConfig.textMultiplier,
                 fontWeight: FontWeight.w500,
