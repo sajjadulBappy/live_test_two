@@ -15,6 +15,7 @@ class HomeTablet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppBarLargeScreen(),
+
             ]),
       ),
     );
