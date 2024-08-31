@@ -109,7 +109,10 @@ class HomeMobile extends StatelessWidget {
               ),
             ),
             SizedBox(height: 14 * SizeConfig.heightMultiplier,),
-            const ButtonWiget(),
+             const SizedBox(
+                width: double.infinity,
+                child: ButtonWiget(),
+            )
 
           ],
         ),
