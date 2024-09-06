@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:live_test_two/responsive/responsive_layout.dart';
+import 'package:live_test_two/screen/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      color: Color(0xFFF4F4F4),
       title: 'Responsive Design',
-      home: ResponsiveLayout(),
+      home: Home(),
     );
   }
 }
