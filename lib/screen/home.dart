@@ -63,7 +63,20 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 20),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text('Congratulating'),
+                        action: SnackBarAction(
+                          label: 'UNDO',
+                          onPressed: () {
+                            // Handle the 'UNDO' action
+                          },
+                        ),
+                        duration: const Duration(seconds: 3), // How long the snackbar stays visible
+                      ),
+                    );
+                  },
                   child: const Text(
                     'CHECK OUT',
                     style: TextStyle(
@@ -78,13 +91,14 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: ListView.builder(
           itemCount: products.length,
           itemBuilder: (BuildContext context, int index) => Container(
             margin: const EdgeInsets.only(bottom: 40),
+              padding: const EdgeInsets.all(10),
               width: double.infinity,
-              height: 100,
+              height: 150,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -100,55 +114,145 @@ class _HomeState extends State<Home> {
               ),
               child: Row(
                 children: [
+
                   Image.asset(
                     products[index].image,
-                    width: 80,
+                    width: 100,
                     fit: BoxFit.cover,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            products[index].title,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                              color: Colors.black,
-                            ),
-                          ),
-                          IconButton(
-                              onPressed: (){},
-                              icon: const Icon(Icons.three_k_outlined)
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              text: 'Color: ',
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              products[index].title,
                               style: const TextStyle(
-                                color: Color(0xFFBBBBBB),
-                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: Colors.black,
                               ),
-                              children: [
-                                TextSpan(
-                                  text: products[index].color,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
                             ),
-                          )
-                        ],
-                      )
-                    ],
-                  )
+                            IconButton(
+                                onPressed: (){},
+                                icon: const Icon(Icons.three_k_outlined)
+                            ),
+                          ],
+                        ),
+                    
+                        //Size and Color
+                        Row(
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                text: 'Color: ',
+                                style: const TextStyle(
+                                  color: Color(0xFFBBBBBB),
+                                  fontSize: 16,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: products[index].color,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(width: 20,),
+                            RichText(
+                              text: TextSpan(
+                                text: 'Size: ',
+                                style: const TextStyle(
+                                  color: Color(0xFFBBBBBB),
+                                  fontSize: 16,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: products[index].size.toString(),
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                    
+                        const SizedBox(height: 16,),
+                        //increment and decrement buttons
+                        SizedBox(
+                    
+                          child: Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFFFFFFF),
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.2), // Shadow color
+                                      spreadRadius: 2, // Spread radius
+                                      blurRadius: 6, // Blur radius for soft shadow
+                                      offset: const Offset(0, 3), // Position of shadow (x, y)
+                                    ),
+                                  ],// Makes the background circular
+                                ),
+                                child: IconButton(
+                                    onPressed: (){},
+                                    icon: const Icon(Icons.add),
+                    
+                                ),
+                              ),
+                              const SizedBox(width: 10,),
+                              const Text(
+                                "1",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(width: 10,),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFFFFFFF),
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.2), // Shadow color
+                                      spreadRadius: 2, // Spread radius
+                                      blurRadius: 6, // Blur radius for soft shadow
+                                      offset: const Offset(0, 3), // Position of shadow (x, y)
+                                    ),
+                                  ],// Makes the background circular
+                                ),
+                                child: IconButton(
+                                  onPressed: (){},
+                                  icon: const Icon(Icons.add),
+                    
+                                ),
+                              ),
+                              const Spacer(),
+                              const Text(
+                                "123\$",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )
