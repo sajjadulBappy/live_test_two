@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:live_test_two/screen/home.dart';
+import 'package:live_test_two/screen/product_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Color(0xFFF4F4F4),
       title: 'Responsive Design',
-      home: Home(),
+      home: ProductListScreen(),
     );
   }
 }
